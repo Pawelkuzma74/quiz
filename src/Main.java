@@ -1,10 +1,29 @@
+import javax.swing.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-public class Main {
+public class Main extends JFrame {
+
+    // ma zawierać pytanie
+    // ma zawierać 2 przyciski tak i nie
+
+
+
+
+
+
+
+    public Main(){
+        super("miliarderzy");
+        setSize(500,500);
+        setDefaultCloseOperation(1); // sprawia, ze działa przycisk exit
+        setVisible(true); //
+    }
 
     public static void main(String[] args) {
+
+        Main main = new Main();
 
         List<Question> questionList = new ArrayList<>();
 
