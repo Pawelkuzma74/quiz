@@ -1,4 +1,5 @@
 import javax.swing.*;
+import java.awt.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -8,10 +9,9 @@ public class Main extends JFrame {
     // ma zawierać pytanie
     // ma zawierać 2 przyciski tak i nie
 
-
-
-
-
+    private JButton buttonYes;
+    private JButton buttonNo;
+    private JLabel LabelQuestion;
 
 
     public Main(){
@@ -19,11 +19,25 @@ public class Main extends JFrame {
         setSize(500,500);
         setDefaultCloseOperation(1); // sprawia, ze działa przycisk exit
         setVisible(true); //
+        buttonYes = new JButton("Tak");
+        buttonNo = new JButton( "Nie");
+        LabelQuestion = new JLabel("Czy Polska leży w Europie ?",0);
+        add(LabelQuestion);
+        add(buttonYes);
+        add(buttonNo);
+
+        setLayout( new GridLayout(3,1));
+
     }
 
     public static void main(String[] args) {
 
-        Main main = new Main();
+        SwingUtilities.invokeLater(new Runnable() {
+            @Override
+            public void run() {
+                Main main = new Main();
+            }
+        });
 
         List<Question> questionList = new ArrayList<>();
 
